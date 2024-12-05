@@ -1,0 +1,67 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.example.trafficdetection'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.trafficdetection"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation libs.camera.video
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    // Flex Delegate 의존성 추가
+    implementation 'org.tensorflow:tensorflow-lite-select-tf-ops:2.14.0' // 최신 버전 확인
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0' // JSON을 처리하기 위한 Moshi 컨버터 추가
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // OkHttp
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
+
+    // TFLite
+    implementation 'org.tensorflow:tensorflow-lite:2.10.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.3.1' // 버전은 최신으로 확인
+
+    //Camera X
+    implementation 'androidx.camera:camera-core:1.0.0-rc04'
+    implementation 'androidx.camera:camera-camera2:1.0.0-rc04'
+    implementation 'androidx.camera:camera-lifecycle:1.0.0-rc04'
+    implementation 'androidx.camera:camera-view:1.0.0-alpha23'
+
+}
