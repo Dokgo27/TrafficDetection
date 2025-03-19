@@ -1,6 +1,6 @@
 # TrafficDetection
 
-### 2024 학사학위논문 : 편의점 이상행동 감지 시스템
+### 2024 학사학위논문 : 
 ![image](https://github.com/user-attachments/assets/89382f32-ac08-43ac-a85e-b881f0057091)
 
 ---
